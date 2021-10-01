@@ -14,8 +14,14 @@ jobs:
       with:
         regex_pattern: 'foo'
         search_string: 'this string contains foo'
+    - name: 'show regex'
+      if: matched
+      run: echo "ok"
     - name: 'test regex ko'
       uses: "MeilCli/regex-match@v1.0.1"
       with:
         regex_pattern: 'bar'
         search_string: 'this string does not contain foo'
+    - name: 'show regex again'
+      if: matched
+      run: echo "ok"

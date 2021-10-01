@@ -10,12 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 'test regex ok'
-      uses: "MeilCli/regex-match-action@v1.0.1"
+      uses: "MeilCli/regex-match@v1.0.1"
       with:
         regex_pattern: 'foo'
         search_string: 'this string contains foo'
     - name: 'test regex ko'
-      uses: "MeilCli/regex-match-action@v1.0.1"
+      uses: "MeilCli/regex-match@v1.0.1"
       with:
         regex_pattern: 'bar'
         search_string: 'this string does not contain foo'

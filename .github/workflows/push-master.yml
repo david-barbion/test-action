@@ -1,0 +1,21 @@
+name: Deploy Master
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'test regex ok'
+      uses: "actions/regex-match-action@v1.0.1"
+      with:
+        regex_pattern: 'foo'
+        search_string: 'this string contains foo'
+    - name: 'test regex ko'
+      uses: "actions/regex-match-action@v1.0.1"
+      with:
+        regex_pattern: 'bar'
+        search_string: 'this string does not contain foo'
